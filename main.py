@@ -26,7 +26,7 @@ network = numpyai.nn.Network([
     MaxPooling2D(),
     Flatten(),
     Dropout(0.5),
-    Dense(10, activation='softmax')
+    Dense(num_classes, activation='softmax')
 ])
 
 # Builds and compiles the network

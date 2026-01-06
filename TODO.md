@@ -2,6 +2,7 @@
 
 - backend
   - generic 'graph' implementation for use with search algorithms
+  - callbacks and logging
 
 - nn
   - LR schedulers
@@ -80,6 +81,7 @@
     - Bayesian Gaussian Mixture
   - decomposition
     - PCA
+    - t-SNE
 
 - search
   - uninformed
