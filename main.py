@@ -47,4 +47,4 @@ network.fit(x_train, y_train, batch_size, epochs, validation_split=0.1)
 
 # Evaluates and saves the trained network
 network.evaluate(x_test, y_test)
-network.save('mnist_network.pyai')
+network.save('mnist_network.npai')
