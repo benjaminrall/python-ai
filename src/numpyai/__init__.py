@@ -5,3 +5,11 @@ from . import feature_extraction
 from . import nn
 from . import preprocessing
 from . import supervised
+
+__all__ = [
+    'backend',
+    'feature_extraction',
+    'nn',
+    'preprocessing',
+    'supervised',
+]

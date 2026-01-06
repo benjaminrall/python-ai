@@ -9,3 +9,15 @@ from .adamw import AdamW
 from .nadam import Nadam
 from .rmsprop import RMSprop
 from .sgd import SGD
+
+__all__ = [
+    'Optimiser',
+    'Adadelta',
+    'Adagrad',
+    'Adam',
+    'Adamax',
+    'AdamW',
+    'Nadam',
+    'RMSprop',
+    'SGD'
+]

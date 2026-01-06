@@ -10,3 +10,16 @@ from . import metrics
 from . import optimisers
 from . import regularisers
 from .network import Network
+
+__all__ = [
+    'activations',
+    'backend',
+    'datasets',
+    'initialisers',
+    'layers',
+    'losses',
+    'metrics',
+    'optimisers',
+    'regularisers',
+    'Network'
+]

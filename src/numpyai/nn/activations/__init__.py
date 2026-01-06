@@ -7,3 +7,13 @@ from .relu import ReLU
 from .sigmoid import Sigmoid
 from .softmax import Softmax
 from .tanh import Tanh
+
+__all__ = [
+    'Activation',
+    'LeakyReLU',
+    'Linear',
+    'ReLU',
+    'Sigmoid',
+    'Softmax',
+    'Tanh'
+]
