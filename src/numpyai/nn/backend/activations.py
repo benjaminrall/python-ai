@@ -4,19 +4,33 @@ import numpy as np
 from numpy.typing import NDArray
 
 def leaky_relu(x: NDArray, alpha: float = 0.3) -> NDArray:
-    """Applies the leaky version of the rectified linear unit activation function to the input array."""
+    """Leaky rectified linear unit activation function, `leaky_relu(x) = max(x, alpha * x)`.
+
+    Parameters
+    ----------
+    alpha : float, optional
+        A float that controls the slope for values lower than 0. Defaults to 0.3.
+    """
     return np.maximum(x, alpha * x)
 
 def relu(x: NDArray) -> NDArray:
-    """Applies the rectified linear unit activation function to the input array."""
+    """Rectified linear unit activation function, `relu(x) = max(x, 0)`."""
     return np.maximum(x, 0)
 
 def sigmoid(x: NDArray) -> NDArray:
-    """Applies the sigmoid activation function to the input array."""
+    """Sigmoid activation function, `sigmoid(x) = 1 / (1 + exp(-x))`.
+    
+    For small values `sigmoid` returns a value close to 0 and 
+    for large values it returns a value close to 1.
+    """
     return 1.0 / (1.0 + np.exp(-x))
 
 def stable_sigmoid(x: NDArray) -> NDArray:
-    """Applies a numerically stable sigmoid activation function to the input array."""
+    """Numerically stable sigmoid activation function.
+
+    This method avoids overflow by calculating exponentials 
+    for negative and positive values separately.
+    """
     # Calculates exponentials for negative and positive values separately
     neg_exp = np.exp(x[x < 0])
     pos_exp = np.exp(-x[x >= 0])
@@ -28,13 +42,20 @@ def stable_sigmoid(x: NDArray) -> NDArray:
     return z
 
 def softmax(x: NDArray) -> NDArray:
-    """Applies the softmax activation function to the input array."""
-    # Ensure numerical stability by subtracting the maximum value from the input
+    """Softmax activation function.
+
+    Converts vectors of values to probability distributions.
+    The elements of the output vector are in the range [0, 1] and sum to 1. 
+
+    Each vector in the input is handled independently. The softmax of each
+    vector x is computed as `softmax(x) = exp(x) / reduce_sum(exp(x))`.
+    """
+    # Ensures numerical stability by subtracting the maximum value from the input
     max_val = np.max(x, axis=-1, keepdims=True)
 
-    # Calculate exponentials and their sums
+    # Calculates exponentials and their sums
     exps = np.exp(x - max_val)
     sums = np.sum(exps, axis=-1, keepdims=True)
 
-    # Return final probabilities array
+    # Returns final probabilities array
     return exps / sums

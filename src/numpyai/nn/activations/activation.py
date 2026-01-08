@@ -20,4 +20,7 @@ class Activation(Representable, Registrable['Activation'], ABC):
 
     @abstractmethod
     def derivative(self, x: NDArray) -> NDArray:
-        """Applies the derivative of the activation function to each element of `x`."""
+        """
+        Calculates the derivatives of the activation function 
+        with respect to each element of `x`.
+        """

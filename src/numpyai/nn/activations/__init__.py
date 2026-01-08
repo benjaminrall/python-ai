@@ -1,4 +1,4 @@
-"""PythonAI neural network activation functions."""
+"""Numpy AI neural network activation functions."""
 
 from .activation import Activation
 from .leaky_relu import LeakyReLU

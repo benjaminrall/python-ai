@@ -5,7 +5,10 @@ from numpyai.nn.backend import mean_squared_error
 from .loss import Loss
 
 class MeanSquaredError(Loss):
-    """Computes the mean of the squared error between outputs and targets."""
+    """
+    Computes the mean of the squares of errors between outputs and targets,
+    `loss = mean(square(output - target))`.
+    """
 
     identifier = 'mean_squared_error'
     aliases = ['mse']

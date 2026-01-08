@@ -6,8 +6,7 @@ from numpyai.nn.backend import softmax
 from .activation import Activation
 
 class Softmax(Activation):
-    """
-    Softmax activation function.
+    """Softmax activation function.
 
     Converts vectors of values to probability distributions.
     The elements of the output vector are in the range [0, 1] and sum to 1. 

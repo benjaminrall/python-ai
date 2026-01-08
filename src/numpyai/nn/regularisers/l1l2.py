@@ -6,11 +6,25 @@ from numpyai.nn.backend import l1, l2
 from .regulariser import Regulariser
 
 class L1L2(Regulariser):
-    """A regulariser that applies an both L1 and L2 regularisation penalties."""
+    """
+    A regulariser that applies both L1 and L2 regularisation penalties, 
+    `loss = l1(x) + l2(x)`.
+    """
 
     identifier = 'l1l2'
 
     def __init__(self, l1_factor: float = 0.01, l2_factor: float = 0.01) -> None:
+        """
+        A regulariser that applies both L1 and L2 regularisation penalties, 
+        `loss = l1(x) + l2(x)`.
+
+        Parameters
+        ----------
+        l1_factor : float, optional
+            The L1 regularisation factor.
+        l2_factor : float, optional
+            The L2 regularisation factor.
+        """
         self.l1_factor = l1_factor
         self.l2_factor = l2_factor
 

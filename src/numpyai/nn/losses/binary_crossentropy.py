@@ -6,7 +6,7 @@ from .loss import Loss
 
 class BinaryCrossentropy(Loss):
     """
-    Computes the cross-entropy loss between the outputs and targets.
+    Computes the binary cross-entropy loss between the outputs and targets.
 
     This cross-entropy loss is used for binary classification applications
     where the target outputs are either 0 or 1.
@@ -16,6 +16,17 @@ class BinaryCrossentropy(Loss):
     aliases = ['bce']
 
     def __init__(self, from_logits: bool = False) -> None:
+        """Computes the binary cross-entropy loss between the outputs and targets.
+
+        This cross-entropy loss is used for binary classification applications
+        where the target outputs are either 0 or 1.
+
+        Parameters
+        ----------
+        from_logits : bool, optional
+            Whether the predicted outputs are represented as 
+            logits or as probabilities.
+        """
         self.from_logits = from_logits
 
     def call(self, output: NDArray, target: NDArray) -> float:

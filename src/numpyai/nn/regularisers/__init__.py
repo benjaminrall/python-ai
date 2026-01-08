@@ -1,4 +1,4 @@
-"""PythonAI neural network regularisers."""
+"""Numpy AI neural network regularisers."""
 
 from .regulariser import Regulariser
 from .l1 import L1

@@ -11,13 +11,22 @@ class Loss(Representable, Registrable['Loss'], ABC):
     """The loss function's string identifier."""
     
     def __call__(self, output: NDArray, target: NDArray) -> float:
-        """Calculates the result of the loss function for a given output and target."""
+        """
+        Calculates the result of the loss function for a 
+        given set of outputs and targets.
+        """
         return self.call(output, target)
 
     @abstractmethod
     def call(self, output: NDArray, target: NDArray) -> float:
-        """Calculates the result of the loss function for a given output and target."""
+        """
+        Calculates the result of the loss function for a 
+        given set of outputs and targets.
+        """
 
     @abstractmethod
     def derivative(self, output: NDArray, target: NDArray) -> NDArray:
-        """Calculates the derivative of the loss function for a given output and target."""
+        """
+        Calculates the derivatives of the loss function with 
+        respect to each of the network's outputs.
+        """

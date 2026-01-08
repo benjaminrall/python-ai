@@ -6,11 +6,23 @@ from numpyai.nn.backend import l1
 from .regulariser import Regulariser
 
 class L1(Regulariser):
-    """A regulariser that applies an L1 regularisation penalty."""
+    """
+    A regulariser that applies an L1 regularisation penalty, 
+    `loss = factor * reduce_sum(abs(x))`.
+    """
 
     identifier = 'l1'
 
     def __init__(self, factor: float = 0.01) -> None:
+        """
+        A regulariser that applies an L1 regularisation penalty, 
+        `loss = factor * reduce_sum(abs(x))`.
+
+        Parameters
+        ----------
+        factor : float, optional
+            The L1 regularisation factor.
+        """
         self.factor = factor
 
     def call(self, x: NDArray) -> float:

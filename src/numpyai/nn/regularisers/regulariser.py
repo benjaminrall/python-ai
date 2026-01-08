@@ -16,8 +16,11 @@ class Regulariser(Representable, Registrable['Regulariser'], ABC):
     
     @abstractmethod
     def call(self, x: NDArray) -> float:
-        """Calculates the regularisation penalty for the input."""
+        """Calculates the total regularisation penalty for the input."""
 
     @abstractmethod
     def derivative(self, x: NDArray) -> NDArray:
-        """Calculates the derivative of the regularisation penalty."""
+        """
+        Calculates the derivative of the regularisation 
+        penalty with respect to each element in `x`.
+        """

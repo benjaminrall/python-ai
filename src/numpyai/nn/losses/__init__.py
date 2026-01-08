@@ -1,4 +1,4 @@
-"""PythonAI neural network loss functions."""
+"""Numpy AI neural network loss functions."""
 
 from .loss import Loss
 from .binary_crossentropy import BinaryCrossentropy
